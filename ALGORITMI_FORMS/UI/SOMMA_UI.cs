@@ -15,6 +15,20 @@ namespace ALGORITMI_FORMS.UI
         public SOMMA_UI()
         {
             InitializeComponent();
+
+            txtNumero2.KeyPress += new KeyPressEventHandler(txtNumero2_KeyPress);
+        }
+
+        private void txtNumero2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica se il tasto premuto è il tasto INVIO (codice 13)
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Esegui il calcolo quando viene premuto INVIO
+                CalcolaRisultato();
+                // Impedisci al tasto INVIO di generare un suono di avviso
+                e.Handled = true;
+            }
         }
 
         private void btnRisultato_Click(object sender, EventArgs e)

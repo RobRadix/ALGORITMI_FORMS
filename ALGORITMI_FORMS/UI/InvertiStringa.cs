@@ -15,8 +15,18 @@ namespace ALGORITMI_FORMS.UI
         public InvertiStringa()
         {
             InitializeComponent();
+            txtFraseDaInvertire.KeyPress += new KeyPressEventHandler(txtFraseDaInvertire_KeyPress);
         }
-
+        private void txtFraseDaInvertire_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica se il tasto premuto è il tasto INVIO (codice 13)
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string input = txtFraseDaInvertire.Text;
+                InvertiStringaMetod(input);
+                e.Handled = true;
+            }
+        }
         private void btnInverti_Click(object sender, EventArgs e)
         {
             string input = txtFraseDaInvertire.Text;
