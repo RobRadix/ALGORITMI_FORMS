@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\BaseForm.cs" />
     <Compile Include="UI\InvertiStringa.cs">
       <SubType>Form</SubType>
     </Compile>
